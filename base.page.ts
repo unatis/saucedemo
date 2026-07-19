@@ -1,6 +1,6 @@
 import { type Browser, type BrowserType, type Page, test } from "@playwright/test";
 
-/*const OBJECT_PROTO_PROPS = new Set(Object.getOwnPropertyNames(Object.prototype));
+const OBJECT_PROTO_PROPS = new Set(Object.getOwnPropertyNames(Object.prototype));
 const SKIP_METHOD_NAMES = new Set(["constructor", "step_Note"]);
 
 function truncate(value: string, max: number): string {
@@ -50,7 +50,7 @@ function createInstrumentedProxy<T extends object>(target: T): T {
             return wrapAsStep(value, prop, receiver);
         },
     });
-}*/
+}
 
 export abstract class BasePage<TMap> {
 
@@ -61,10 +61,10 @@ export abstract class BasePage<TMap> {
         this.page = page;
         this.map = new MapClass(page);
 
-        //return createInstrumentedProxy(this) as this;
+        return createInstrumentedProxy(this) as this;
     }
 
-    /*protected async step_Note(message: string): Promise<void> {
-        await test.step(message, async () => {});
-    }*/
+    protected async step_Note(message: string): Promise<void> {
+        await test.step(message, async () => { });
+    }
 }
