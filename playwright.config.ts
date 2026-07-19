@@ -26,13 +26,13 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
 
-    headless: false,
+    headless: true,
     screenshot: 'on',
     video: 'retain-on-failure',
     viewport: null,
     launchOptions: {
       args: ['--start-maximized'],
-      },
+    },
     /* Base URL to use in actions like `await page.goto('')`. */
     baseURL: 'https://www.saucedemo.com/',
 
