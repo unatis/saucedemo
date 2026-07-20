@@ -12,9 +12,9 @@ export class HeaderPage extends BasePage<HeaderPageMap> {
         await this.map.GoToCart_Button().click();
     }
 
-    async click_Burger_Menu() {
+    /*async click_Burger_Menu() {
         await this.map.Burger_Button().click();
-    }
+    }*/
 
 
 }
