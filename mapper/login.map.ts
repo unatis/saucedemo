@@ -19,4 +19,16 @@ export class LoginPageMap {
     login_Page(): Locator {
         return this.page.locator("div.login_wrapper");
     }
+
+    errorMessage_Label(): Locator {
+        return this.page.locator("h3[data-test='error']");
+    }
+
+    errorClose_Button(): Locator {
+        return this.page.locator("button[data-test='error-button']");
+    }
+
+    credentials_Label(): Locator {
+        return this.page.locator("#login_credentials");
+    }
 }

@@ -14,6 +14,24 @@ export class BurgerMenuPage extends BasePage<BurgerMenuPageMap> {
         await expect(this.map.BurgerMenu_PopUp()).toBeVisible();
     }
 
+    async click_BurgerMenuClose_Button() {
+        await this.map.BurgerMenuClose_Button().click();
+    }
+
+    async verify_BurgerMenu_Closed() {
+        await expect(this.map.BurgerMenu_PopUp()).toHaveAttribute("aria-hidden", "true");
+    }
+
+    async verify_BurgerMenu_Items(items: BurgerMenuItems[]) {
+        for (const item of items) {
+            await expect(this.map.BurgerMenu_Element(item)).toBeVisible();
+        }
+    }
+
+    async verify_BurgerMenuItem_Href(itemName: BurgerMenuItems, href: string) {
+        await expect(this.map.BurgerMenu_Element(itemName)).toHaveAttribute("href", href);
+    }
+
     async click_BurgerMenu_Item(itemName: BurgerMenuItems) {
 
         switch (itemName) {

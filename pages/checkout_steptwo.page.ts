@@ -44,5 +44,24 @@ export class Checkout_Steptwo_Page extends BasePage<Checkout_Steptwo_PageMap> {
         await this.map.Finish_Button().click();
     }
 
+    async click_Cancel_Button() {
+        await this.map.Cancel_Button().click();
+    }
+
+    async verify_ShippingInformation_Label(shippingInfo: string) {
+        await expect(this.map.ShippingInformation_Label()).toHaveText(shippingInfo);
+    }
+
+    async verify_ItemTotal_Label(amount: string) {
+        await expect(this.map.ItemTotal_Label()).toHaveText(`Item total: ${amount}`);
+    }
+
+    async verify_Tax_Label(amount: string) {
+        await expect(this.map.Tax_Label()).toHaveText(`Tax: ${amount}`);
+    }
+
+    async verify_Total_Label(amount: string) {
+        await expect(this.map.Total_Label()).toHaveText(`Total: ${amount}`);
+    }
 
 }

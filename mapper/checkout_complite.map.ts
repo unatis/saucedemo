@@ -16,5 +16,9 @@ export class Checkout_Complite_PageMap {
         return this.page.locator("//button[@data-test='back-to-products']");
     }
 
+    Dispatched_Label(): Locator {
+        return this.page.locator("//div[@data-test='complete-text']");
+    }
+
 
 }

@@ -23,4 +23,24 @@ export class Checkout_Steptwo_PageMap {
     Finish_Button(): Locator {
         return this.page.locator("button[data-test='finish']");
     }
+
+    Cancel_Button(): Locator {
+        return this.page.locator("button[data-test='cancel']");
+    }
+
+    ShippingInformation_Label(): Locator {
+        return this.page.locator("div[data-test='shipping-info-value']");
+    }
+
+    ItemTotal_Label(): Locator {
+        return this.page.locator("div[data-test='subtotal-label']");
+    }
+
+    Tax_Label(): Locator {
+        return this.page.locator("div[data-test='tax-label']");
+    }
+
+    Total_Label(): Locator {
+        return this.page.locator("div[data-test='total-label']");
+    }
 }

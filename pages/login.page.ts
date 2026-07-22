@@ -26,4 +26,31 @@ export class LoginPage extends BasePage<LoginPageMap> {
         await expect(this.map.login_Page()).toBeVisible();
 
     }
+
+    async verify_ErrorMessage_Label(message: string) {
+        await expect(this.map.errorMessage_Label()).toContainText(message);
+    }
+
+    async click_ErrorClose_Button() {
+        await this.map.errorClose_Button().click();
+    }
+
+    async verify_ErrorMessage_Hidden() {
+        await expect(this.map.errorMessage_Label()).toBeHidden();
+    }
+
+    async verify_Password_TextBox_Masked() {
+        await expect(this.map.password_TextBox()).toHaveAttribute("type", "password");
+    }
+
+    async verify_Credentials_Label() {
+        await expect(this.map.credentials_Label()).toBeVisible();
+        await expect(this.map.credentials_Label()).toContainText("standard_user");
+    }
+
+    async verify_DataTest_Attributes() {
+        await expect(this.map.userName_TextBox()).toHaveCount(1);
+        await expect(this.map.password_TextBox()).toHaveCount(1);
+        await expect(this.map.login_Button()).toHaveCount(1);
+    }
 }
