@@ -23,4 +23,12 @@ export class Checkout_Stepone_Page extends BasePage<Checkout_Stepone_PageMap>{
     async click_Continue_Button() {
             await this.map.continue_Button().click();
         }
+
+    async click_Cancel_Button() {
+            await this.map.cancel_Button().click();
+        }
+
+    async verify_ErrorMessage_Label(message: string) {
+            await expect(this.map.errorMessage_Label()).toContainText(message);
+        }
     }

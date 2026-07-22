@@ -20,5 +20,13 @@ continue_Button(): Locator{
         return this.page.locator("#continue");
     }
 
+cancel_Button(): Locator{
+        return this.page.locator("button[data-test='cancel']");
+    }
+
+errorMessage_Label(): Locator{
+        return this.page.locator("h3[data-test='error']");
+    }
+
 }
 

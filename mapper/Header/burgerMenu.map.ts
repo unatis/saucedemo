@@ -11,4 +11,8 @@ export class BurgerMenuPageMap {
     BurgerMenu_Element(itemName: string): Locator {
         return this.page.locator(`//div[@class='bm-menu-wrap']//a[contains(text(),'${itemName}')]`);
     }
+
+    BurgerMenuClose_Button(): Locator {
+        return this.page.locator(`#react-burger-cross-btn`);
+    }
 }

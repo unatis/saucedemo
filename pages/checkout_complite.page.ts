@@ -22,4 +22,8 @@ export class Checkout_Complite_Page extends BasePage<Checkout_Complite_PageMap> 
         await this.map.BackHome_Button().click();
     }
 
+    async verify_Dispatched_Label() {
+        await expect(this.map.Dispatched_Label()).toContainText("Your order has been dispatched");
+    }
+
 }
